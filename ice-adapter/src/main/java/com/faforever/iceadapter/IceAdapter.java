@@ -24,7 +24,7 @@ public class IceAdapter implements Callable<Integer> {
 
     public static boolean ALLOW_HOST = true;
     public static boolean ALLOW_REFLEXIVE = true;
-    public static boolean ALLOW_RELAY = true;
+    public static boolean ALLOW_RELAY = false;
 
     public static volatile boolean running = true;
 
@@ -178,11 +178,11 @@ public class IceAdapter implements Callable<Integer> {
         GPGNET_PORT = iceOptions.getGpgnetPort();
         LOBBY_PORT = iceOptions.getLobbyPort();
 
-        if(iceOptions.isForceRelay()) {
-            ALLOW_HOST = false;
-            ALLOW_REFLEXIVE = false;
-            ALLOW_RELAY = true;
-        }
+        // if(iceOptions.isForceRelay()) {
+            // ALLOW_HOST = false;
+            // ALLOW_REFLEXIVE = false;
+            // ALLOW_RELAY = true;
+        // }
 
         Debug.DELAY_UI_MS = iceOptions.getDelayUi();
         PING_COUNT = iceOptions.getPingCount();
